@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ánh Sáng Thời Đại</title>
+    <!-- Bootstrap - CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.css" />
+    <!-- Favicon - Logo -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon_io/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- Custom css -->
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Bootstrap - JS -->
+    <script src="./assets/js/bootstrap.js"></script>
+    <script src="./assets/js/bootstrap.bundle.js"></script>
+    <div class="homePage">
+      <header id="header" class="header container-fluid shadow">
+        <div class="row">
+          <ul
+            class="nav d-flex align-items-center justify-content-center py-2 gap-5"
+          >
+            <li class="nav-item fs-4 fw-semibold nav-item--active">
+              Trang chủ
+            </li>
+            <li>
+              <a href="#" class="nav-item fs-4 fw-semibold">Giới thiệu</a>
+            </li>
+            <li class="header__logo nav-item">
+              <img
+                src="./assets/images/logoGame.png"
+                alt="logoGame"
+                class="header__logo--img"
+              />
+            </li>
+            <li>
+              <a
+                href="./resultAnnouncement.html"
+                class="nav-item fs-4 fw-semibold"
+                >Kết quả</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-item fs-4 fw-semibold">Liên hệ</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <main
+        id="main"
+        class="container-fluid d-flex flex-column justify-content-center align-items-center"
+      >
+        <img
+          src="./assets/images/logoGame.png"
+          alt="logoGame"
+          class="homePage__logo"
+        />
+        <a
+          href="./Page2.html"
+          id="start"
+          type="button"
+          class="btn btn-start col-2 mt-5 fw-bold"
+          >Bắt đầu</a
+        >
+      </main>
+    </div>
+    <script>
+      getCount = () => {
+        let count = window.sessionStorage.getItem("count");
+        if (count === null) {
+          return 0;
+        }
+        return count;
+      };
+      getRework = () => {
+        let reworkTime = window.sessionStorage.getItem("rework");
+        if (reworkTime === null) {
+          return [];
+        }
+        return JSON.parse(reworkTime);
+      };
+      updateReworkCount = () => {
+        let count = parseInt(getCount()) + 1;
+        let reworkTime = getRework();
+        reworkTime.push({
+          count: count,
+          score: 0,
+        });
+        window.sessionStorage.setItem("count", count);
+        window.sessionStorage.setItem("rework", JSON.stringify(reworkTime));
+      };
+
+      $("#start").on("click", () => {
+        localStorage.setItem("i", 0);
+        updateReworkCount();
+      });
+    </script>
+  </body>
+</html>

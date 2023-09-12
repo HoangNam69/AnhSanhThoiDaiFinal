@@ -1,0 +1,337 @@
+/* Init variable css */
+
+:root {
+  --bg-color-header: rgba(255, 255, 255, 0.15);
+  --bg-color: linear-gradient(to top, #071952, #a076f9);
+  --btn-color-start: #b52121;
+  --btn-color-start-hover: #ff4242;
+  --text-btn-color: #fff5e0;
+  --btn-bg-color-start: #ede4ff;
+  --btn-bg-color-ans: #feffac;
+  --bg-ans-true: #a5ffe5;
+  --bg-ans-false: #ff8282;
+  --bg-ans-hover: #ffdeb9;
+}
+
+/* Format pages */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+/* Set Background for page main */
+
+.result__announcement,
+.gamePage,
+.homePage {
+  background: var(--bg-color);
+  height: 100vh;
+  position: relative;
+}
+
+/* Canh chỉnh menu */
+
+#header .nav .nav-item {
+  min-width: 100px;
+  text-align: center;
+  width: fit-content;
+}
+
+#header .nav .nav-item:hover {
+  color: var(--text-btn-color);
+  cursor: pointer;
+}
+
+.nav-item--active {
+  color: var(--text-btn-color);
+  width: fit-content;
+  position: relative;
+}
+
+.nav-item--active::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  background: var(--btn-color-start);
+  box-shadow: 0px 2px 5px var(--text-btn-color);
+}
+
+a {
+  color: #071952;
+  text-decoration: none;
+}
+
+.header {
+  position: fixed;
+  height: max-content;
+  top: 0;
+}
+
+.header .header__logo--img {
+  height: 120px;
+}
+
+/* Logo lớn tại trung tâm trang */
+
+.homePage__logo {
+  width: 500px;
+  margin-top: 180px;
+}
+
+/* Xử lý button */
+
+.btn {
+  font-size: 28px;
+  color: var(--text-btn-color);
+  padding: 10px 0;
+}
+
+.btn.btn-start {
+  background: var(--btn-color-start);
+  box-shadow: 0px 0px 10px var(--text-btn-color);
+  letter-spacing: 2px;
+}
+
+.btn.btn-start:hover {
+  color: var(--text-btn-color);
+  background: var(--btn-color-start-hover);
+}
+
+/* Trang chinh phục thử thách */
+
+.gamePage {
+  position: relative;
+}
+
+#result__announcement--header,
+#gamePage__header {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+#gamePage__header .header__logo--img {
+  height: 100px;
+  width: auto;
+}
+
+#gamePage__header.row {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.challenge {
+  padding-top: 140px;
+}
+
+/* .board {} */
+
+.board__question {
+  min-height: 300px;
+  background: var(--text-btn-color);
+  border-radius: 10px;
+  padding: 20px 30px;
+  font-size: 20px;
+  position: relative;
+}
+
+#next-question {
+  position: absolute;
+  bottom: 25px;
+  width: 0;
+  right: 100px;
+}
+
+.board__answer {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 40px;
+}
+
+.board__answer .btn--ans {
+  min-height: 60px;
+  background: var(--btn-bg-color-ans);
+  color: var(--btn-color-start);
+  font-size: 18px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.board__answer .btn--ans:hover {
+  background: var(--bg-ans-hover);
+}
+
+/* Xử lý các đán án đúng sai */
+
+.btn--ans-true {
+  background: var(--bg-ans-true) !important;
+}
+
+.btn--ans-false {
+  background: var(--bg-ans-false) !important;
+}
+
+/* Trang hiển thị kết quả thi */
+
+#result__announcement--header {
+  margin: 0;
+}
+
+.board__result {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board__content {
+  width: 400px;
+  height: 500px;
+  padding: 40px 30px;
+  background: var(--bg-ans-hover);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.board__content .row,
+.board__content .col {
+  padding: 0;
+  margin: 0;
+}
+
+.board__content--heder {
+  width: 100%;
+  font-size: 28px;
+  font-weight: 800;
+  font-style: italic;
+  background: var(--btn-bg-color-start);
+  border-radius: 10px;
+}
+
+.board__content--contents {
+  text-align: center;
+}
+
+/* .board__content--show {} */
+
+.board__content--footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  width: 100%;
+  background: var(--btn-color-start);
+  color: var(--text-btn-color);
+  padding: 10px 0;
+  border-radius: 10px;
+}
+
+.board__content--footer i.icon-home {
+  font-size: 40px;
+}
+
+.board__content--footer p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.btn.board__content--footer:hover {
+  background: var(--btn-color-start-hover);
+  color: var(--btn-bg-color-start);
+}
+
+/* css cho đồng hồ đếm ngược */
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-right {
+  text-align: right;
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.showMessEndCount {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background: var(--bg-ans-true);
+  padding: 50px 100px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+  display: none;
+}
+
+.showMessEndTotalTime {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background: var(--bg-ans-true);
+  padding: 50px 100px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+  display: none;
+}
+
+.showMessEndCount__contents {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.btn__close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 4px 10px;
+  background: var(--bg-ans-hover);
+  border-radius: 50%;
+}
+
+.btn__close--icon {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.btn__close:hover {
+  background: var(--text-btn-color);
+  cursor: pointer;
+  box-shadow: 0px 0px 10px black;
+  color: var(--bg-ans-false);
+}
+
+.btn--ans i {
+  position: absolute;
+  left: 80px;
+  top: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.btn--ans i::before {
+  display: inline-block;
+  vertical-align: middle;
+}

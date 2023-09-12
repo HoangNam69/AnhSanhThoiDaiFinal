@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ánh Sáng Thời Đại</title>
+    <!-- Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Bootstrap - CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <!-- Favicon - Logo -->
+    <link rel="shortcut icon" href="./assets/images/favicon_io/favicon.ico" type="image/x-icon">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+
+    <style>
+        .modal-background {
+            background-image: url('./assets/images/modal.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/fontawesome.js"></script>
+</head>
+
+<body>
+    <!-- Bootstrap - JS -->
+    <script src="./assets/js/bootstrap.js"></script>
+    <script src="./assets/js/bootstrap.bundle.js"></script>
+    <div class="gamePage">
+        <header id="gamePage__header" class="header container-fluid shadow row">
+            <a href="./index.html" class="col-2 text-center">
+                <img src="./assets/images/logoGame.png" alt="logoGame" class="header__logo--img">
+            </a>
+            <p class="col-10 d-flex align-items-center fs-4 fw-medium fst-italic px-0 m-0">Màn chinh phục thử thách</p>
+        </header>
+        <main class="container challenge">
+            <div class="board">
+                <div class="row justify-content-end">
+                    <div class="col-1">
+                        <div class="container-fluid d-inline-flex p-0 position-relative">
+                            <div class="circle">
+                                <div class="text-right" id="dong-ho" style="color: white;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="board__question row">
+
+                    <!-- Load câu hỏi tại đây -->
+                    <a id="reload" href=""><i id="next-question" title="đi tới câu hỏi tiếp theo "
+                            class="fa-solid fa-forward fa-2x "></i></a>
+                </div>
+                <div class="board__answer row ">
+
+                </div>
+
+            </div>
+
+            <div class="">
+                <a href="./resultAnnouncement.html" class="btn btn-success" role="button"
+                    style="margin-top: 70px; float: right; padding: 10px 10px;">
+                    Nộp bài
+                </a>
+            </div>
+
+
+        </main>
+
+
+
+        <div class="showMessEndCount ">
+            <div class="showMessEndCount__contents ">
+                Bạn đã hết thời gian làm câu trên
+            </div>
+            <div class="btn__close ">
+                <i class='btn__close--icon bx bx-x'></i>
+            </div>
+        </div>
+    </div>
+    <!-- Modal hiển thị thông báo giải thích cho câu trả lời sai -->
+    <div id="modal__messages" class="modal fade modal-xl ">
+        <div class="modal-dialog ">
+            <div class="modal-content modal-background ">
+                <div class="modal-header ">
+                    <h4 class="modal-title " id="infor">
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <p>
+                    <p class="detail "><b>"</b><b>"</b></p>
+                    <p style="text-align: center;"> <strong>- Hồ Chí Minh -</strong></p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- xử lý đồng hồ đếm ngược -->
+    <script src="./assets/js/main.js">
+    </script>
+</body>
+
+</html>
